@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonMC | Legal Compliance</title>
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/legal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="legal-page">
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: white;">
+                    <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                    <span>MoonMC</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="legal.html" class="active">Legal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="legal-main container">
+        <header class="legal-header fade-in">
+            <h1>Legal <span class="purple-text">Compliance</span></h1>
+            <p>Please review our official policies and terms of service for moonmcnet.falix.gg.</p>
+        </header>
+
+        <div class="legal-grid">
+            <!-- Privacy Policy Card -->
+            <div class="legal-card fade-in" style="animation-delay: 0.1s;">
+                <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Privacy Policy</h3>
+                <p>How we collect, use, and protect your personal data and gaming information.</p>
+                <button class="btn-legal" onclick="openModal('privacy-modal')" aria-label="View Privacy Policy">View Policy <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Terms of Service Card -->
+            <div class="legal-card fade-in" style="animation-delay: 0.2s;">
+                <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Terms of Service</h3>
+                <p>The rules and guidelines you agree to when playing on MoonMC.</p>
+                <button class="btn-legal" onclick="openModal('tos-modal')" aria-label="View Terms of Service">View Terms <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Store Terms Card -->
+            <div class="legal-card fade-in" style="animation-delay: 0.3s;">
+                <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>Store Terms</h3>
+                <p>Payment policies, refund guidelines, and virtual item conditions.</p>
+                <button class="btn-legal" onclick="openModal('store-modal')" aria-label="View Store Terms">View Store Terms <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <section class="legal-faq fade-in" style="animation-delay: 0.4s;">
+            <h2 class="section-title">Frequently Asked <span class="purple-text">Questions</span></h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>How do I request my data?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>You can request a copy of all data associated with your Minecraft UUID by opening a "Data Request" ticket in our Discord server. We will process your request within 30 days as per GDPR guidelines.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>What is your refund policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>All purchases are final. As virtual items are delivered instantly, we do not offer refunds. If you have issues with a delivery, please contact our support team instead of initiating a chargeback.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>Can I appeal a ban?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, most bans can be appealed on our official Discord server, unless specified otherwise (e.g., chargeback bans or severe community safety violations).</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>Are my payments secure?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, we use a secure, custom PayPal integration for all transactions. We never see or store your credit card or bank details; everything is handled securely by PayPal's official infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlays -->
+    <div id="privacy-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="privacy-title">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="privacy-title">Privacy Policy</h2>
+                <button class="close-modal" onclick="closeModal('privacy-modal')" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-progress-container">
+                <div class="modal-progress-bar" id="privacy-progress"></div>
+            </div>
+            <div class="modal-content-wrapper">
+                <aside class="modal-sidebar">
+                    <nav class="modal-nav">
+                        <a href="#privacy-intro" class="modal-nav-link active">Introduction</a>
+                        <a href="#privacy-data" class="modal-nav-link">Data Collection</a>
+                        <a href="#privacy-usage" class="modal-nav-link">Data Usage</a>
+                        <a href="#privacy-rights" class="modal-nav-link">Your Rights</a>
+                        <a href="#privacy-cookies" class="modal-nav-link">Cookies</a>
+                    </nav>
+                </aside>
+                <div class="modal-body" onscroll="updateProgress(this, 'privacy-progress')">
+                    <div id="privacy-intro" class="modal-section scroll-reveal">
+                        <h3>1. Introduction</h3>
+                        <p>At MoonMC (moonmcnet.falix.gg), we prioritize the privacy and security of our community. This policy outlines how we handle your personal information and gaming data to ensure a safe and transparent experience.</p>
+                        <p>By using our services, you consent to the practices described in this policy.</p>
+                    </div>
+                    <div id="privacy-data" class="modal-section scroll-reveal">
+                        <h3>2. Data We Collect</h3>
+                        <p>We collect only the essential information required to provide and maintain our Minecraft server services:</p>
+                        <ul>
+                            <li><strong>Account Identifiers:</strong> Minecraft Username, UUID, and Discord ID (if linked).</li>
+                            <li><strong>Technical Data:</strong> IP Address (for security and anti-cheat), client version, and connection logs.</li>
+                            <li><strong>Gameplay Data:</strong> In-game chat logs, command history, player statistics, and virtual inventory data.</li>
+                            <li><strong>Third-Party Data:</strong> Transaction IDs from payment processors (Tebex/PayPal) for purchase verification.</li>
+                        </ul>
+                    </div>
+                    <div id="privacy-usage" class="modal-section scroll-reveal">
+                        <h3>3. How We Use Your Data</h3>
+                        <p>Your data is used strictly for operational purposes:</p>
+                        <ul>
+                            <li><strong>Service Provision:</strong> Managing your player profile and virtual assets.</li>
+                            <li><strong>Security:</strong> Monitoring for hacking, exploits, and rule violations.</li>
+                            <li><strong>Support:</strong> Resolving technical issues and player disputes via our Discord ticket system.</li>
+                            <li><strong>Compliance:</strong> Fulfilling legal obligations and enforcing our Terms of Service.</li>
+                        </ul>
+                    </div>
+                    <div id="privacy-rights" class="modal-section scroll-reveal">
+                        <h3>4. Your Rights</h3>
+                        <p>Under global data protection laws (including GDPR and CCPA), you have the following rights:</p>
+                        <ul>
+                            <li><strong>Access:</strong> Request a copy of all data associated with your UUID.</li>
+                            <li><strong>Rectification:</strong> Request correction of inaccurate data.</li>
+                            <li><strong>Erasure:</strong> Request the deletion of your personal data ("Right to be Forgotten").</li>
+                            <li><strong>Portability:</strong> Request your data in a structured, machine-readable format.</li>
+                        </ul>
+                        <p>To exercise these rights, please open a "Data Request" ticket on our official Discord.</p>
+                    </div>
+                    <div id="privacy-cookies" class="modal-section scroll-reveal">
+                        <h3>5. Cookie Policy</h3>
+                        <p>Our website uses essential cookies to maintain your session and improve site performance. We do not use tracking or advertising cookies.</p>
+                    </div>
+                    <div class="scroll-indicator" aria-hidden="true">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="privacy-agree" aria-required="true">
+                    <span class="checkmark"></span>
+                    I have read and understand the Privacy Policy
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="tos-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="tos-title">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="tos-title">Terms of Service</h2>
+                <button class="close-modal" onclick="closeModal('tos-modal')" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-progress-container">
+                <div class="modal-progress-bar" id="tos-progress"></div>
+            </div>
+            <div class="modal-content-wrapper">
+                <aside class="modal-sidebar">
+                    <nav class="modal-nav">
+                        <a href="#tos-agreement" class="modal-nav-link active">Agreement</a>
+                        <a href="#tos-conduct" class="modal-nav-link">User Conduct</a>
+                        <a href="#tos-account" class="modal-nav-link">Account Resp.</a>
+                        <a href="#tos-liability" class="modal-nav-link">Liability</a>
+                        <a href="#tos-termination" class="modal-nav-link">Termination</a>
+                    </nav>
+                </aside>
+                <div class="modal-body" onscroll="updateProgress(this, 'tos-progress')">
+                    <div id="tos-agreement" class="modal-section scroll-reveal">
+                        <h3>1. Agreement to Terms</h3>
+                        <p>By connecting to moonmcnet.falix.gg, you enter into a binding legal agreement with MoonMC. If you do not agree to these terms, you must immediately disconnect and cease all use of our services.</p>
+                    </div>
+                    <div id="tos-conduct" class="modal-section scroll-reveal">
+                        <h3>2. User Conduct & Rules</h3>
+                        <p>Players must maintain a respectful environment. Prohibited actions include, but are not limited to:</p>
+                        <ul>
+                            <li><strong>Hacking/Exploiting:</strong> Using modified clients, macros, or scripts to gain an unfair advantage.</li>
+                            <li><strong>Harassment:</strong> Engaging in hate speech, toxicity, or bullying of other players or staff.</li>
+                            <li><strong>Disruption:</strong> Intentionally lagging the server or bypassing security measures.</li>
+                            <li><strong>Impersonation:</strong> Falsely claiming to be a staff member or another player.</li>
+                        </ul>
+                    </div>
+                    <div id="tos-account" class="modal-section scroll-reveal">
+                        <h3>3. Account Responsibility</h3>
+                        <p>You are solely responsible for the security of your Minecraft account. Any rule violations committed by your account, regardless of who was playing at the time, will be your responsibility.</p>
+                    </div>
+                    <div id="tos-liability" class="modal-section scroll-reveal">
+                        <h3>4. Limitation of Liability</h3>
+                        <p>MoonMC is provided "as is" without any warranties. We are not liable for any loss of virtual items, data, or access resulting from server downtime, technical issues, or moderation actions.</p>
+                    </div>
+                    <div id="tos-termination" class="modal-section scroll-reveal">
+                        <h3>5. Termination</h3>
+                        <p>We reserve the right to terminate your access to our services at any time, with or without notice, for any violation of these terms or our server rules.</p>
+                    </div>
+                    <div class="scroll-indicator" aria-hidden="true">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="tos-agree" aria-required="true">
+                    <span class="checkmark"></span>
+                    I agree to the Terms of Service and Server Rules
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="store-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="store-title">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="store-title">Store Terms & Conditions</h2>
+                <button class="close-modal" onclick="closeModal('store-modal')" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-progress-container">
+                <div class="modal-progress-bar" id="store-progress"></div>
+            </div>
+            <div class="modal-content-wrapper">
+                <aside class="modal-sidebar">
+                    <nav class="modal-nav">
+                        <a href="#store-virtual" class="modal-nav-link active">Virtual Goods</a>
+                        <a href="#store-refunds" class="modal-nav-link">Refund Policy</a>
+                        <a href="#store-chargebacks" class="modal-nav-link">Chargebacks</a>
+                        <a href="#store-delivery" class="modal-nav-link">Delivery</a>
+                    </nav>
+                </aside>
+                <div class="modal-body" onscroll="updateProgress(this, 'store-progress')">
+                    <div id="store-virtual" class="modal-section scroll-reveal">
+                        <h3>1. Virtual Goods Policy</h3>
+                        <p>All items sold on the MoonMC store are virtual, non-tangible digital goods for use exclusively within our Minecraft server. These items have no real-world value and cannot be exchanged for currency.</p>
+                    </div>
+                    <div id="store-refunds" class="modal-section scroll-reveal">
+                        <h3>2. Strict No-Refund Policy</h3>
+                        <p>Due to the immediate delivery and nature of digital goods, <strong>all purchases are final and non-refundable</strong>. By completing a transaction, you waive your right to a refund under any circumstances, including server closure or player bans.</p>
+                    </div>
+                    <div id="store-chargebacks" class="modal-section scroll-reveal">
+                        <h3>3. Chargeback Policy</h3>
+                        <p>Initiating a chargeback or dispute via PayPal, Tebex, or your bank is considered a violation of these terms. Any chargebacks will result in a permanent, non-appealable ban from all MoonMC services and potential legal action.</p>
+                    </div>
+                    <div id="store-delivery" class="modal-section scroll-reveal">
+                        <h3>4. Delivery & Support</h3>
+                        <p>Items are typically delivered within 5-15 minutes of a successful transaction. If you do not receive your items within 24 hours, please open a support ticket on our Discord with your transaction ID.</p>
+                    </div>
+                    <div class="scroll-indicator" aria-hidden="true">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="store-agree" aria-required="true">
+                    <span class="checkmark"></span>
+                    I understand and accept the Store Terms
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                    <p>MoonMC &copy; 2026. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="legal.html">Legal Compliance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/legal.js"></script>
+</body>
+</html>

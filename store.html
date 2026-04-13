@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | MoonMC Official Shop</title>
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ecommerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="page-transition">
+    <div id="checkout-spinner" class="checkout-overlay-spinner">
+        <div class="cosmic-loader"></div>
+        <h3>Initiating Cosmic Connection...</h3>
+        <p>Calculating your promotional rewards</p>
+    </div>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="cart-overlay" onclick="toggleCart()"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3 id="cart-title">Your Shopping Basket</h3>
+                <button class="close-cart" onclick="toggleCart()" aria-label="Close rank selection" role="button">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="promo-banner-container">
+                <div id="promo-banner" class="promo-banner" aria-live="polite">
+                    Upgrade to Galactic — save $2.00 instantly and unlock /fly!
+                </div>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Items populated by JS -->
+                <div class="empty-cart-msg">Your cosmic basket is empty.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Grand Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="btn-checkout" onclick="proceedToCheckout()">
+                    Complete Cosmic Purchase <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="secure-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure Cosmic Gateway Verified</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                <span>MoonMC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html" class="active">Store</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                <li class="cart-nav">
+                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero mini-hero">
+        <div class="hero-content">
+            <h1>Official <span class="purple-text">Server Store</span></h1>
+            <p>Support the server and unlock exclusive lifetime perks.</p>
+        </div>
+    </header>
+
+    <section id="store" class="store-section">
+        <div class="container">
+            <h2 class="section-title">Membership <span class="purple-text">Tiers</span></h2>
+            <p class="section-subtitle">Unlock exclusive perks and support the server's growth.</p>
+            <div class="store-grid">
+                <!-- Astronaut Tier -->
+                <div class="membership-card astronaut" data-aos="fade-up">
+                    <div class="tier-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <h3>Astronaut</h3>
+                    <div class="price">$1.99<span>/mo</span></div>
+                    <ul class="tier-perks">
+                        <li><i class="fas fa-check"></i> [Astronaut] Prefix</li>
+                        <li><i class="fas fa-check"></i> Access to /feed</li>
+                        <li><i class="fas fa-check"></i> 1x Monthly Crate Key</li>
+                        <li><i class="fas fa-check"></i> Basic Particle Effects</li>
+                    </ul>
+                    <button class="btn-add-cart" onclick="addToCart('Astronaut', 1.99, 'astronaut')">Add to Cart</button>
+                </div>
+
+                <!-- Planet Tier -->
+                <div class="membership-card planet" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tier-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Planet</h3>
+                    <div class="price">$3.99<span>/mo</span></div>
+                    <ul class="tier-perks">
+                        <li><i class="fas fa-check"></i> [Planet] Prefix</li>
+                        <li><i class="fas fa-check"></i> Access to /fly in hub</li>
+                        <li><i class="fas fa-check"></i> 3x Monthly Crate Keys</li>
+                        <li><i class="fas fa-check"></i> Exclusive Join Message</li>
+                    </ul>
+                    <button class="btn-add-cart" onclick="addToCart('Planet', 3.99, 'planet')">Add to Cart</button>
+                </div>
+
+                <!-- Moonie Tier -->
+                <div class="membership-card moonie" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tier-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Moonie</h3>
+                    <div class="price">$5.99<span>/mo</span></div>
+                    <ul class="tier-perks">
+                        <li><i class="fas fa-check"></i> [Moonie] Prefix</li>
+                        <li><i class="fas fa-check"></i> Access to /hat and /nick</li>
+                        <li><i class="fas fa-check"></i> 5x Monthly Crate Keys</li>
+                        <li><i class="fas fa-check"></i> Priority Queue Access</li>
+                    </ul>
+                    <button class="btn-add-cart" onclick="addToCart('Moonie', 5.99, 'moonie')">Add to Cart</button>
+                </div>
+
+                <!-- Galactic Tier -->
+                <div class="membership-card galactic premium" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tier-icon">
+                        <i class="fas fa-shuttle-space"></i>
+                    </div>
+                    <div class="best-value">MOST POPULAR</div>
+                    <h3>Galactic</h3>
+                    <div class="price">$7.99<span>/mo</span></div>
+                    <ul class="tier-perks">
+                        <li><i class="fas fa-star"></i> [Galactic] Prefix</li>
+                        <li><i class="fas fa-star"></i> Unlimited /fly everywhere</li>
+                        <li><i class="fas fa-star"></i> 10x Monthly Crate Keys</li>
+                        <li><i class="fas fa-star"></i> Private Discord Channel</li>
+                    </ul>
+                    <button class="btn-add-cart" onclick="addToCart('Galactic', 7.99, 'galactic')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                    <p>MoonMC &copy; 2026. Not affiliated with Mojang AB.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="legal.html">Legal Compliance</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ecommerce.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
+</body>
+</html>

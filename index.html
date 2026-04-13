@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonMC | Official Minecraft SMP</title>
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ecommerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="page-transition">
+    <!-- Cookie Consent Popup -->
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                <span>MoonMC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="legal.html">Legal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo" class="hero-logo">
+            <h1>Experience the Ultimate <span class="purple-text">SMP</span></h1>
+            <p>Join MoonMC, where community meets quality. Survive, build, and conquer with friends on the most stable Java SMP.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="copyIP()">Copy Server IP <i class="fas fa-copy"></i></button>
+                <a href="store.html" class="btn-secondary">Visit Store</a>
+            </div>
+            <div class="server-status">
+                <span class="status-dot"></span> <span id="uptime-status">99.9% Network Uptime Guaranteed</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="parallax-bg" id="parallax-bg"></div>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Our <span class="purple-text">Service Guarantee</span></h2>
+                    <p>MoonMC is built on a foundation of reliability and professional support. We guarantee a premium experience with every service we offer.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-shield-alt"></i> <strong>99.9% Uptime Guarantee:</strong> Our server architecture is designed for maximum availability, ensuring you can play whenever you want.</li>
+                        <li><i class="fas fa-headset"></i> <strong>24/7 Customer Support:</strong> Our dedicated support team is available around the clock to assist you with any inquiries or technical issues.</li>
+                        <li><i class="fas fa-rocket"></i> <strong>High Performance:</strong> We use industry-leading hardware to provide a lag-free environment for all players.</li>
+                    </ul>
+                    <div class="counter-grid">
+                        <div class="counter-item">
+                            <span class="count" data-target="99">0</span>
+                            <p>% Network Uptime</p>
+                        </div>
+                        <div class="counter-item">
+                            <span class="count" data-target="24">0</span>
+                            <p>/7 Global Support</p>
+                        </div>
+                        <div class="counter-item">
+                            <span class="count" data-target="15">0</span>
+                            <p>Min Avg Response</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="floating-element astronaut-float">
+                        <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="Astronaut Floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Ticket Section -->
+    <section id="support" class="support-section">
+        <div class="container">
+            <div class="support-box" data-aos="zoom-in">
+                <h2 class="section-title">Need <span class="purple-text">Assistance?</span></h2>
+                <p>Open a support ticket and our 24/7 team will respond instantly.</p>
+                <button class="btn-primary" onclick="openSupportModal()">Open Support Ticket <i class="fas fa-ticket-alt"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Modal -->
+    <div id="support-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-container support-modal-container">
+            <div class="modal-header">
+                <h2>Open Support Ticket</h2>
+                <button class="close-modal" onclick="closeSupportModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="support-form" onsubmit="handleSupportSubmit(event)">
+                    <div class="form-group">
+                        <label for="support-name">Your Name</label>
+                        <input type="text" id="support-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="support-email">Email Address</label>
+                        <input type="email" id="support-email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="support-subject">Issue Category</label>
+                        <select id="support-subject" required>
+                            <option value="">Select a category</option>
+                            <option value="billing">Billing/Payment Issue</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="account">Account Recovery</option>
+                            <option value="report">Player Report</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-message">Message</label>
+                        <textarea id="support-message" rows="4" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Submit Ticket</button>
+                </form>
+                <div id="support-success" class="support-success-msg" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Ticket Submitted Successfully!</h3>
+                    <p>Your ticket ID is #<span id="ticket-id"></span>. An automated confirmation has been sent to your email.</p>
+                    <p>Our average response time is 15 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact <span class="purple-text">Us</span></h2>
+            <p class="section-subtitle">Have questions? Reach out to our team directly.</p>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Support</h3>
+                        <p>support@moonmc.falix.gg</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fab fa-discord"></i>
+                        <h3>Discord Community</h3>
+                        <p>Join over 5,000+ players</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Response Time</h3>
+                        <p>Typically under 15 minutes</p>
+                    </div>
+                </div>
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Email address" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png" alt="MoonMC Logo">
+                    <p>MoonMC &copy; 2026. Not affiliated with Mojang AB.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="store.html">Store</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="legal.html">Terms of Service</a>
+                        <a href="legal.html">Privacy Policy</a>
+                        <a href="legal.html">Refund Policy</a>
+                    </div>
+                </div>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/ecommerce.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact Us • Global Rust</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles.css">
+
+<style>
+
+.contact-section{
+padding:120px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.contact-title{
+text-align:center;
+font-size:46px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.contact-title span{
+color:#1ea2ff;
+}
+
+.contact-sub{
+text-align:center;
+opacity:.7;
+margin-bottom:60px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-card{
+background:#0b0f14;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:14px;
+padding:30px;
+}
+
+.contact-form label{
+font-size:14px;
+margin-bottom:6px;
+display:block;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-bottom:18px;
+background:#06090e;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:6px;
+color:white;
+font-family:Poppins;
+}
+
+.contact-form textarea{
+height:140px;
+resize:none;
+}
+
+.send-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#1ea2ff;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+}
+
+.send-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 15px rgba(30,162,255,.4);
+}
+
+.contact-info h2{
+color:#1ea2ff;
+margin-bottom:18px;
+}
+
+.contact-info p{
+opacity:.75;
+margin-bottom:10px;
+}
+
+.contact-info a{
+color:#1ea2ff;
+text-decoration:none;
+}
+
+@media(max-width:900px){
+.contact-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+<div class="container">
+<div class="nav-inner">
+
+<div class="nav-left">
+<img class="nav-logo" src="https://image2url.com/r2/default/images/1772836434120-ac9b6ef2-5cda-4bb8-a32e-9cec16d5e141.png">
+<a class="brand brand-split">
+<span class="brand-blue">GLOBAL</span>
+<span class="brand-white">RUST</span>
+</a>
+</div>
+
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="store.html">Store</a>
+<a href="contactus.html">Contact Us</a>
+</nav>
+
+</div>
+</div>
+</header>
+
+<main class="contact-section">
+
+<h1 class="contact-title">Contact <span>Us</span></h1>
+
+<p class="contact-sub">
+Have a question about the server, bounties, store or anything else? We're here to help!
+</p>
+
+<div class="contact-grid">
+
+<!-- FORM -->
+
+<div class="contact-card">
+
+<form id="contactForm" class="contact-form">
+
+<label>Your Name</label>
+<input type="text" id="name" placeholder="John Doe" required>
+
+<label>Email Address</label>
+<input type="email" id="email" placeholder="your@email.com" required>
+
+<label>Subject</label>
+<input type="text" id="subject" placeholder="Question about bounty / ban / store" required>
+
+<label>Message</label>
+<textarea id="message" placeholder="Write your message here..." required></textarea>
+
+<button class="send-btn">SEND MESSAGE</button>
+
+</form>
+
+</div>
+
+<!-- INFO PANEL -->
+
+<div class="contact-card contact-info">
+
+<h2>Get in Touch</h2>
+
+<p><strong>Discord (fastest response)</strong></p>
+<p>
+Join our server →
+<a href="https://discord.gg/globalrust">discord.gg/globalrust</a>
+</p>
+
+<br>
+
+<p><strong>Email</strong></p>
+<p>
+<a href="mailto:support@velocityrust.uk">
+support@velocityrust.uk
+</a>
+</p>
+
+<br>
+
+<p><strong>Server Support</strong></p>
+<p>
+Most questions are answered fastest in our Discord support channels.
+</p>
+
+<br>
+
+<p><strong>Store / Purchase issues</strong></p>
+<p>
+Please include your SteamID / Transaction ID in the message.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+const webhook = "https://discord.com/api/webhooks/1479635426649178192/VMu-0K-OtcozFSj6NDNURVlG4oxx3L6XSapShFNO0IbNH42H1dAesL3xLcbsMn0U0Qru";
+
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const subject = document.getElementById("subject").value;
+const message = document.getElementById("message").value;
+
+const payload = {
+embeds:[{
+title:"New Website Contact",
+color:3447003,
+fields:[
+{name:"Name",value:name},
+{name:"Email",value:email},
+{name:"Subject",value:subject},
+{name:"Message",value:message}
+],
+footer:{text:"Global Rust Website"}
+}]
+};
+
+await fetch(webhook,{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(payload)
+});
+
+alert("Message sent successfully!");
+
+document.getElementById("contactForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>

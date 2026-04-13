@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | MoonMC Cosmic Experience</title>
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1776020334798-705aaca4-0a72-4c91-9960-864a1b43fe4a.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="checkout-page theme-planet">
+    <div id="stars-container"></div>
+    <div id="particles-container"></div>
+    
+    <div class="astronaut-silhouette">
+        <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.05"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"/><path d="M12 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z"/><path d="M12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Zm-6 4c.22-.72 3.31-2 6-2s5.78 1.28 6 2Z"/></svg>
+    </div>
+
+    <div class="checkout-wrapper">
+        <header class="checkout-header">
+            <div class="header-left">
+                <a href="store.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to Store
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="planet" title="Planet Theme">
+                        <i class="fas fa-globe-americas"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="moonie" title="Moonie Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="galactic" title="Galactic Theme">
+                        <i class="fas fa-meteor"></i>
+                    </button>
+                    <div class="mute-control">
+                        <button id="mute-btn" title="Toggle Sound">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="checkout-main">
+            <div class="container flex-container">
+                <section class="checkout-form-section">
+                    <div id="checkout-card" class="glass-card">
+                        <h2>Secure <span class="theme-text">Checkout</span></h2>
+                        <form id="checkout-form">
+                            <div class="form-group">
+                                <label for="ign">Minecraft IGN</label>
+                                <input type="text" id="ign" required placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" required>
+                                        <option value="US">United States</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="ES">Spain</option>
+                                        <option value="IT">Italy</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="JP">Japan</option>
+                                        <option value="BR">Brazil</option>
+                                        <option value="IN">India</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" required placeholder="Cosmo City">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" required placeholder="123 Galactic Way">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="state">State / Province</label>
+                                    <input type="text" id="state" required placeholder="Milky Way">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">Zip/Postal Code</label>
+                                    <input type="text" id="zip" required placeholder="12345">
+                                </div>
+                            </div>
+                            <div class="payment-methods">
+                                <label>Select Payment Gateway</label>
+                                <div class="method-selector">
+                                    <label class="method-option active" data-method="paypal">
+                                        <input type="radio" name="payment-method" value="paypal" checked>
+                                        <div class="method-content">
+                                            <i class="fab fa-paypal"></i>
+                                            <div class="method-text">
+                                                <span class="method-name">PayPal Balance</span>
+                                                <span class="method-desc">Instant & Secure</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="method-option" data-method="card">
+                                        <input type="radio" name="payment-method" value="card">
+                                        <div class="method-content">
+                                            <i class="fas fa-credit-card"></i>
+                                            <div class="method-text">
+                                                <span class="method-name">Debit/Credit Card</span>
+                                                <span class="method-desc">All major cards</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="paypal-container">
+                                    <div id="paypal-button-container"></div>
+                                    <p class="paypal-info-note">
+                                        <i class="fas fa-shield-alt"></i> Official: <span class="purple-text">paypal.me/MoonMCPayments</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="confirmation-card" class="glass-card confirmation-card" style="display: none;">
+                        <div class="success-badge-container">
+                            <div class="success-badge">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <h2>Purchase <span class="theme-text">Successful!</span></h2>
+                        <p>Your cosmic transmission has been received and processed.</p>
+                        
+                        <div class="confirmation-details">
+                            <div class="detail-row">
+                                <strong>Transaction ID:</strong>
+                                <span id="conf-id">#TX-774219</span>
+                            </div>
+                            <div class="detail-row">
+                                <strong>Username:</strong>
+                                <span id="conf-ign">Not Set</span>
+                            </div>
+                            <div class="detail-row">
+                                <strong>Gateway:</strong>
+                                <span id="conf-method">PayPal Balance</span>
+                            </div>
+                            
+                            <div id="conf-rewards" class="conf-rewards">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                        
+                        <p class="conf-note">Please allow up to 15 minutes for your perks to synchronize with the server network.</p>
+                        
+                        <div class="btn-home-container">
+                            <a href="index.html" class="btn-home">
+                                Return to Home <i class="fas fa-home"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="order-summary-section">
+                    <div class="glass-card">
+                        <h3>Order <span class="theme-text">Summary</span></h3>
+                        <div id="summary-items" class="summary-items">
+                            <!-- Populated by JS -->
+                        </div>
+                        
+                        <div class="promo-section">
+                            <div class="promo-input-group">
+                                <input type="text" id="promo-input" placeholder="Promo Code">
+                                <button onclick="applyPromoCode()" class="btn-promo">Apply</button>
+                            </div>
+                            <div id="promo-message" class="promo-message"></div>
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="summary-subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row" id="summary-discount-row" style="display: none;">
+                                <span>Discount</span>
+                                <span id="summary-discount" class="discount-text">-$0.00</span>
+                            </div>
+                            <div class="summary-row" id="summary-tax-row">
+                                <span>Tax</span>
+                                <span id="summary-tax">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping (Digital)</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Grand Total</span>
+                                <div class="total-container">
+                                    <span id="summary-total">$0.00</span>
+                                    <span id="localized-total" class="localized-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i> 99.9% Secure Gateway
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <audio id="sound-switch" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto"></audio>
+    <audio id="sound-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" preload="auto"></audio>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script src="js/ecommerce.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
